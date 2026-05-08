@@ -26,7 +26,8 @@ const run = async () => {
 
         app.get("/user", async (req,res) => {
             const cursor = await userCollection.find()
-            res.send(cursor)
+            const result = await cursor.toArray()
+            res.send(result)
         })
 
         await client.db("admin").command({ ping: 1 });
