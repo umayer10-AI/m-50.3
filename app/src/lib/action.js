@@ -22,14 +22,14 @@ export const createUser = async (formData) => {
     return data
 }
 
-export const updateUser = async (formData) => {
+export const updateUser = async (id,formData) => {
     "use server"
 
     const newUser = Object.fromEntries(formData.entries())
     console.log(newUser)
 
-    const res = await fetch(`http://localhost:5000/user`,{
-        method: "POST",
+    const res = await fetch(`http://localhost:5000/user/${id}`,{
+        method: "PATCH",
         headers: {
             "content-type" : "application/json"
         },
@@ -38,9 +38,9 @@ export const updateUser = async (formData) => {
     const data = await res.json()
 
     console.log(data)
-    if(data.insertedId) {
-        revalidatePath("/user")
-    }
+    // if(data.insertedId) {
+    //     revalidatePath("/user")
+    // }
     return data
 }
 
