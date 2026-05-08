@@ -55,10 +55,16 @@ const run = async () => {
             }
 
             const m = req.body
-            const updateDocument = 
-            console.log(m)
-            // const result = await userCollection.insertOne(newUser)
-            // res.send(result)
+            const updateDocument = {
+                $set: {
+                    name: m.name,
+                    email: m.email,
+                    role: m.role
+                }
+            }
+            console.log(updateDocument)
+            const result = await userCollection.updateOne(filter,updateDocument)
+            res.send(result)
         })
 
         app.delete("/user/:id", async (req,res) => {
