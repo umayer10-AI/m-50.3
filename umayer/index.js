@@ -47,12 +47,16 @@ const run = async () => {
             res.send(result)
         })
 
-        app.patch('/user', async (req,res) => {
+        app.patch('/user/:id', async (req,res) => {
 
             const id = req.params.id
+            const filter = {
+                _id: new ObjectId(id)
+            }
 
-            // const newUser = req.body
-            console.log(id)
+            const m = req.body
+            const updateDocument = 
+            console.log(m)
             // const result = await userCollection.insertOne(newUser)
             // res.send(result)
         })
