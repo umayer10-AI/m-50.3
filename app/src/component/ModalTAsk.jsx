@@ -1,9 +1,10 @@
-"use client";
+import { createUser } from "@/lib/action";
 import {Envelope} from "@gravity-ui/icons";
 import {Button, Input, Label, Modal, Surface, TextField} from "@heroui/react";
 import React from 'react';
 
 const ModalTAsk = () => {
+
     return (
         <div>
              <Modal>
@@ -21,7 +22,7 @@ const ModalTAsk = () => {
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
-                <form className="flex flex-col gap-4">
+                <form action={createUser} className="flex flex-col gap-4">
                   <TextField className="w-full" name="name" type="text">
                     <Label>Name</Label>
                     <Input placeholder="Enter your name" />

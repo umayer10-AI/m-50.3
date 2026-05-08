@@ -1,6 +1,6 @@
 import ModalTAsk from '@/component/ModalTAsk';
 import TableTAsk from '@/component/TableTAsk';
-import { deleteUser } from '@/lib/action';
+import { createUser, deleteUser } from '@/lib/action';
 import { getUser } from '@/lib/data';
 import React from 'react';
 
