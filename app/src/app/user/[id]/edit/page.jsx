@@ -9,6 +9,7 @@ const page = async ({params}) => {
     const data = await getId(id)
 
     const a = async (formData) => {
+        "use server"
         await updateUser(id,formData)
     }
 
@@ -29,10 +30,12 @@ const page = async ({params}) => {
                                 <Input placeholder="Enter your role" />
                               </TextField>
             
-                          <Button slot="close" variant="secondary">
+                          <div className='flex gap-3'>
+                            <Button slot="close" variant="secondary">
                             Cancel
                           </Button>
-                          <Button type=" submit" slot="close">Add User</Button>
+                          <Button type=" submit" slot="close">Update</Button>
+                          </div>
                             </form>
         </div>
     );
