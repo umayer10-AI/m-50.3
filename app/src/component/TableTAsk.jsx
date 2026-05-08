@@ -1,8 +1,11 @@
+"use client"
+import { deleteUser } from '@/lib/action';
 import { AlertDialog, Button, Table } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 
 const TableTAsk = ({p}) => {
+
     return (
         <div>
              <Table>
@@ -45,7 +48,7 @@ const TableTAsk = ({p}) => {
               <Button slot="close" variant="tertiary">
                 Cancel
               </Button>
-              <Button slot="close" variant="danger">
+              <Button onClick={() => deleteUser(v._id)} slot="close" variant="danger">
                 Confirm Delete
               </Button>
             </AlertDialog.Footer>
