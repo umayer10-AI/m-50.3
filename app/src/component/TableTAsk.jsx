@@ -1,10 +1,9 @@
 "use client"
-import { deleteUser } from '@/lib/action';
 import { AlertDialog, Button, Table } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 
-const TableTAsk = ({p}) => {
+const TableTAsk = ({p,deleteUser}) => {
 
     return (
         <div>

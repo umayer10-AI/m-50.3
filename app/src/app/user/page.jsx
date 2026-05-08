@@ -1,4 +1,5 @@
 import TableTAsk from '@/component/TableTAsk';
+import { deleteUser } from '@/lib/action';
 import { getUser } from '@/lib/data';
 import React from 'react';
 
@@ -9,7 +10,7 @@ const page = async () => {
     return (
         <div>
             <h2>User Data: {data.length}</h2>
-            <TableTAsk p={data}></TableTAsk>
+            <TableTAsk p={data} deleteUser={deleteUser}></TableTAsk>
         </div>
     );
 };
